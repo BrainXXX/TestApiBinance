@@ -24,7 +24,7 @@ namespace TestApi
             textBox1.Text = await Task.Run(() => OutputWebResponse(url2));
         }
 
-        private static async Task<string> getWebResponse(string url)
+        private static async Task<string> GetWebResponse(string url)
         {
             // create request..
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -47,7 +47,7 @@ namespace TestApi
         {
             try
             {
-                string byc = await getWebResponse(url);
+                string byc = await GetWebResponse(url);
 
                 int pos1 = byc.IndexOf("[", 0);
                 int pos2 = byc.IndexOf("]", pos1);

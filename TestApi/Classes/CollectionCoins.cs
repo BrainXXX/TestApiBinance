@@ -67,7 +67,7 @@ namespace TestApi.Classes
         public override string ToString()
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
-            return $"{symbol,-20}{lastPrice,15:C2}{quoteVolume,20:C0}";
+            return $"{symbol,-20}{lastPrice,15:C4}{quoteVolume,20:C0}";
         }
     }
 }
