@@ -32,27 +32,6 @@ namespace TestApi.Classes
             this.quoteVolume = quoteVolume;
         }
 
-        public CollectionCoins(string symbol, double priceChange, double priceChangePercent, double weightedAvgPrice, double lastPrice, double lastQty, double openPrice,
-            double highPrice, double lowPrice, double volume, double quoteVolume, ulong openTime, ulong closeTime, ulong firstId, ulong lastId, ulong count)
-        {
-            this.symbol = symbol;
-            this.priceChange = priceChange;
-            this.priceChangePercent = priceChangePercent;
-            this.weightedAvgPrice = weightedAvgPrice;
-            this.lastPrice = lastPrice;
-            this.lastQty = lastQty;
-            this.openPrice = openPrice;
-            this.highPrice = highPrice;
-            this.lowPrice = lowPrice;
-            this.volume = volume;
-            this.quoteVolume = quoteVolume;
-            this.openTime = openTime;
-            this.closeTime = closeTime;
-            this.firstId = firstId;
-            this.lastId = lastId;
-            this.count = count;
-        }
-
         // Реализуем интерфейс IComparable<T>
         public int CompareTo(CollectionCoins obj)
         {

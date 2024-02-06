@@ -13,6 +13,8 @@ namespace TestApi
         private readonly string url1 = "https://fapi.binance.com/fapi/v1/ticker/price";
         private readonly string url2 = "https://fapi.binance.com/fapi/v1/ticker/24hr";
         private readonly string url3 = "https://fapi.binance.com/fapi/v1/ticker/24hr?symbol=BTCUSDT";
+        private readonly string url4 = "https://api.binance.com/api/v3/ticker/24hr";
+        private readonly string url5 = "https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT";
 
         public MainWindow()
         {
