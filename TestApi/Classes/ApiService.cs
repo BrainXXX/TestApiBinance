@@ -10,14 +10,20 @@ using TestApi.Classes;
 public class ApiService : IDisposable
 {
     private readonly HttpClient _httpClient;
+    private bool _disposed = false;
 
     public ApiService(HttpClient httpClient)
     {
-        _httpClient = httpClient;
+        _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
     }
 
     public async Task<List<CoinModel>> GetCoinsAsync(string apiUrl)
     {
+        if (string.IsNullOrWhiteSpace(apiUrl))
+        {
+            throw new ArgumentException("API URL cannot be null or whitespace.", nameof(apiUrl));
+        }
+
         // Выполняем GET-запрос к API
         using (HttpResponseMessage response = await _httpClient.GetAsync(apiUrl))
         {
@@ -43,13 +49,18 @@ public class ApiService : IDisposable
             }
             else
             {
-                return null;
+                throw new HttpRequestException($"Error response from API: {response.StatusCode}");
             }
         }
     }
 
     public async Task<string> OutputWebResponse(string url)
     {
+        if (string.IsNullOrWhiteSpace(url))
+        {
+            throw new ArgumentException("URL cannot be null or whitespace.", nameof(url));
+        }
+
         List<CoinModel> coins = await GetCoinsAsync(url);
 
         if (coins != null)
@@ -69,6 +80,22 @@ public class ApiService : IDisposable
 
     public void Dispose()
     {
-        _httpClient?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        if (disposing)
+        {
+            _httpClient?.Dispose();
+        }
+
+        _disposed = true;
     }
 }
