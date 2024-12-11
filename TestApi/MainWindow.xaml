@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Height="525" Width="878" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="textBox1" Height="283" VerticalAlignment="Top" Margin="32,32,32,0" TextWrapping="NoWrap" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" FontFamily="Consolas" AcceptsReturn="True"/>
-        <Button x:Name="button1" Content="Пуск" Click="Button_Click" Margin="187,350,187,0" Height="35" VerticalAlignment="Top" />
+        <TextBox x:Name="textBox1" Height="283" VerticalAlignment="Top" Margin="32,32,439,0" TextWrapping="NoWrap" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" AcceptsReturn="True"/>
+        <TextBox x:Name="textBox2" Height="283" VerticalAlignment="Top" Margin="439,32,32,0" TextWrapping="NoWrap" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" AcceptsReturn="True"/>
+        <TextBox x:Name="textBox3" Height="112" VerticalAlignment="Top" Margin="32,315,439,0" TextWrapping="NoWrap" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" AcceptsReturn="True"/>
+        <TextBox x:Name="textBox4" Height="112" VerticalAlignment="Top" Margin="439,315,32,0" TextWrapping="NoWrap" IsReadOnly="True" AutoWordSelection="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" AcceptsReturn="True"/>
+        <Button x:Name="button1" Content="Пуск" Click="Button_Click" Margin="187,444,187,0" Height="35" VerticalAlignment="Top" />
     </Grid>
 </Window>

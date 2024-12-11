@@ -78,6 +78,21 @@ public class ApiService : IDisposable
         }
     }
 
+    public static string FavoriteCoins(string listCoins, List<string> listFavoriteCoins)
+    {
+        // Проверяем, что входная строка и список избранных монет не пустые
+        if (string.IsNullOrWhiteSpace(listCoins) || listFavoriteCoins.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        // Фильтруем строки, оставляя только те, которые начинаются с подстрок из списка
+        string filtered = string.Join("\n", listCoins.Split('\n')
+            .Where(line => listFavoriteCoins.Any(substring => line.StartsWith(substring, StringComparison.OrdinalIgnoreCase))));
+
+        return filtered;
+    }
+
     public void Dispose()
     {
         Dispose(true);
