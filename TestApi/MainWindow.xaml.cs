@@ -13,7 +13,7 @@ namespace TestApi
         private readonly string url3 = "https://api.binance.com/api/v3/ticker/24hr";
         //private readonly string url4 = "https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT";
 
-        private readonly List<string> listFavoriteCoins = ["BTCUSDT ", "ETHUSDT ", "BNBUSDT ", "SOLUSDT ", "TONUSDT ", "CAKEUSDT "];
+        private readonly List<string> listFavoriteCoins = ["BTCUSDT ", "ETHUSDT ", "BNBUSDT ", "SOLUSDT ", "TONUSDT ", "CAKEUSDT ", "TRUMPUSDT ", "RAYUSDT "];
         private readonly ApiService _apiService;
 
         public MainWindow()
